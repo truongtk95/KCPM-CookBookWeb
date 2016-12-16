@@ -31,7 +31,7 @@ namespace Cookbook.Controllers
                     id = int.Parse(ViewData["MaMonAn"].ToString());
                 }
                 WebClient client = new WebClient();
-                var json = client.DownloadString("http://kcpm-cookbookserver.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
+                var json = client.DownloadString("http://cookbookserver-git.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
                 json = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, System.Text.Encoding.Default.GetBytes(json)));
                 var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
                 dynamic model = serializer.Deserialize<dynamic>(json);
@@ -92,7 +92,7 @@ namespace Cookbook.Controllers
 
           //  ViewData["MaMonAn"] = id;
             WebClient client = new WebClient();
-            var json = client.DownloadString("http://kcpm-cookbookserver.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
+            var json = client.DownloadString("http://cookbookserver-git.apphb.com/api/MonAn/LayMonAn/" + id.ToString());
             json = System.Text.Encoding.Unicode.GetString(System.Text.Encoding.Convert(System.Text.Encoding.UTF8, System.Text.Encoding.Unicode, System.Text.Encoding.Default.GetBytes(json)));
             var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
             dynamic model = serializer.Deserialize<dynamic>(json);
